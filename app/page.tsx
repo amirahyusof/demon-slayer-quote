@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { quotes, Quote } from '@/lib/quotes';
-import KatanaDivider from '@/components/katanaDivider';
+import NavigationButton from '@/components/navigationButton';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -40,28 +40,24 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-screen text-center bg-gradient-to-b from-black via-red-950 to-black">
-      <h1 className="text-5xl text-red-400 sm:text-6xl font-bold mb-6">
+    <div className="min-h-screen text-center overflow-y-hidden">
+      <h1 className="text-5xl text-red-400 sm:text-6xl font-bold mb-6 mt-20">
         Demon Slayer Quotes
       </h1>
       {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center mt-10">
+      <section className="flex flex-col items-center justify-center mt-20">
         {randomQuote && (
           <div
             ref={quoteRef}
-            className="p-6 bg-gradient-to-b from-red-900 via-black to-black rounded-2xl shadow-xl max-w-xl"
+            className="p-6 bg-gradient-to-b from-red-900 via-red-600 to-black rounded-2xl shadow-xl max-w-xl"
           >
             <p className="text-2xl italic mb-4">"{randomQuote.text}"</p>
             <span className="text-lg opacity-80">— {randomQuote.author}</span>
           </div>
         )}
         
-        <div className='flex flex-row gap-4 mt-4'>
-          <button> Random Quote </button>
-          <button> Favourite Quote </button>
-          <button> Song </button>
-        </div>
+        <NavigationButton />
       </section>
-    </main>
+    </div>
   );
 }

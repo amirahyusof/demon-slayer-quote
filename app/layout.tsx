@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${jpFont.className} antialiased`}
+        className={`${jpFont.className} antialiased bg-[#0d0d14]`}
       >
         {children}
       </body>
