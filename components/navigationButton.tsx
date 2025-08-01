@@ -8,7 +8,7 @@ export default function NavigationButton(){
       <div className="flex flex-row gap-4 mb-4">
         <Button className="border-2 hover:bg-white cursor-pointer">
           <Dices />
-          <span className="text-xl">Random Quote</span>
+          <span className="text-xl">New Quote</span>
         </Button>
         <Button className="border-2 hover:bg-white cursor-pointer">
           <Heart />
