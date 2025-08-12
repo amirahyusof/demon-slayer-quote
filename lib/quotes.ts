@@ -1,68 +1,226 @@
 // data/quotes.ts
 export type Quote = {
+  id: number;
   text: string;
-  author: string;
+  character:string;
+  image:string;
 };
 
 export const quotes: Quote[] = [
   //Tanjiro
-  { text: 'No matter how weak or unworthy you feel, keep living.', author: 'Tanjiro Kamado' },
-  { text: 'To protect those who are precious to me, I’ll make my body into a shield.', author: 'Tanjiro Kamado' },
-  { text: 'The bond between Nezuko and me can’t be severed by anyone!', author: 'Tanjiro Kamado' },
-  { text: 'Don’t give up. Even if it’s painful, even if it’s agonizing, don’t give up.', author: 'Tanjiro Kamado' },
-  { text: 'The flames of determination will never be extinguished.', author: 'Kyojuro Rengoku' },
-  { text: 'A lesson learned through pain is worth a thousand lectures.', author: 'Kyojuro Rengoku' },
-  { text: 'Those who regret their words and deeds are the ones who truly know the meaning of being human.', author: 'Tanjiro Kamado' },
-  { text: 'I’ll become stronger, no matter how many times I fall.', author: 'Tanjiro Kamado' },
+  { 
+    id:1,
+    text: 'No matter how weak or unworthy you feel, keep living.', 
+    character: 'Tanjiro Kamado' ,
+    image: '/characters/Tanjiro-chibi.png'
+  },
+  { 
+    id:2,
+    text: 'To protect those who are precious to me, I’ll make my body into a shield.', 
+    character: 'Tanjiro Kamado',
+    image: '/characters/Tanjiro-chibi.png'
+  },
+  { 
+    id:3,
+    text: 'The bond between Nezuko and me can’t be severed by anyone!', 
+    character: 'Tanjiro Kamado',
+    image: '/characters/Tanjiro-chibi.png'
+  },
+  { 
+    id:4,
+    text: 'Don’t give up. Even if it’s painful, even if it’s agonizing, don’t give up.', 
+    character: 'Tanjiro Kamado',
+    image: '/characters/Tanjiro-chibi.png'
+  },
+  { 
+    id:5,
+    text: 'The flames of determination will never be extinguished.', 
+    character: 'Kyojuro Rengoku',
+    image: '/characters/Rengoku-chibi.png'
+  },
+  { 
+    id:6,
+    text: 'A lesson learned through pain is worth a thousand lectures.', 
+    character: 'Kyojuro Rengoku',
+    image: '/characters/Rengoku-chibi.png'
+  },
+  { 
+    id:7,
+    text: 'Those who regret their words and deeds are the ones who truly know the meaning of being human.', 
+    character: 'Tanjiro Kamado',
+    image: '/characters/Tanjiro-chibi.png'
+  },
+  { 
+    id:8,
+    text: 'I’ll become stronger, no matter how many times I fall.', 
+    character: 'Tanjiro Kamado',
+    image: '/characters/Tanjiro-chibi.png'
+  },
 
   //Nezuko
-  { text: 'Family is what drives me forward.', author: 'Nezuko Kamado' },
-  { text: 'Even in silence, I’ll fight to protect those I love.', author: 'Nezuko Kamado' },
-  
+  { 
+    id:9,
+    text: 'Family is what drives me forward.', 
+    character: 'Nezuko Kamado',
+    image: '/characters/Nezuko-chibi.png'
+  },
+  { 
+    id:10,
+    text: 'Even in silence, I’ll fight to protect those I love.', 
+    character: 'Nezuko Kamado',
+    image: '/characters/Nezuko-chibi.png'
+  },
+
 
   // Zenitsu
-  { text: 'Don’t stop. Run. Run. Run!', author: 'Zenitsu Agatsuma' },
-  { text: 'Stop acting weak. You are capable of more than you think.', author: 'Zenitsu Agatsuma' },
-  { text: 'Even if I am afraid, I will still move forward.', author: 'Zenitsu Agatsuma' },
+  { 
+    id:11,
+    text: 'Don’t stop. Run. Run. Run!', 
+    character: 'Zenitsu Agatsuma',
+    image: '/characters/Zenitsu-chibi.png'
+  },
+  { 
+    id:12,
+    text: 'Stop acting weak. You are capable of more than you think.', 
+    character: 'Zenitsu Agatsuma',
+    image: '/characters/Zenitsu-chibi.png'
+  },
+  { 
+    id:13,
+    text: 'Even if I am afraid, I will still move forward.', 
+    character: 'Zenitsu Agatsuma',
+    image: '/characters/Zenitsu-chibi.png'
+  },
 
   //Inosuke
-  { text: 'I’ll headbutt the limits of my strength until they break!', author: 'Inosuke Hashibira' },
-  { text: 'I don’t care who you are, I’ll defeat you with my instincts.', author: 'Inosuke Hashibira' },
+  { 
+    id:14,
+    text: 'I’ll headbutt the limits of my strength until they break!', 
+    character: 'Inosuke Hashibira', 
+    image: '/characters/Inosuke-chibi.png'
+  },
+  { 
+    id:15,
+    text: 'I don’t care who you are, I’ll defeat you with my instincts.', 
+    character: 'Inosuke Hashibira',
+    image: '/characters/Inosuke-chibi.png'
+  },
 
   //Rengoku
-  { text: 'Set your heart ablaze.', author: 'Rengoku Kyojuro' },
-  { text: 'The strong should aid and protect the weak. That’s the duty of the powerful.', author: 'Kyojuro Rengoku' },
-  { text: 'A lesson without pain is meaningless.', author: 'Kyojuro Rengoku' },
-  { text: 'When you lose your way, remember why you started.', author: 'Kyojuro Rengoku' },
-  { text: 'Life is fleeting, but the bonds we forge will remain.', author: 'Kyojuro Rengoku' },
-  { text: 'The flames of determination will never be extinguished.', author: 'Kyojuro Rengoku' },
+  { 
+    id:16,
+    text: 'Set your heart ablaze.',
+    character: 'Rengoku Kyojuro',
+    image: '/characters/Rengoku-chibi.png'
+  },
+  { 
+    id:17,
+    text: 'The strong should aid and protect the weak. That’s the duty of the powerful.',
+    character: 'Kyojuro Rengoku',
+    image: '/characters/Rengoku-chibi.png'
+  },
+  { 
+    id:18,
+    text: 'A lesson without pain is meaningless.',
+    character: 'Kyojuro Rengoku',
+    image: '/characters/Rengoku-chibi.png'
+  },
+  { 
+    id:19,
+    text: 'When you lose your way, remember why you started.',
+    character: 'Kyojuro Rengoku',
+    image: '/characters/Rengoku-chibi.png'
+  },
+  { 
+    id:20,
+    text: 'Life is fleeting, but the bonds we forge will remain.',
+    character: 'Kyojuro Rengoku',
+    image: '/characters/Rengoku-chibi.png'
+  },
+  { 
+    id:21,
+    text: 'The flames of determination will never be extinguished.',
+    character: 'Kyojuro Rengoku',
+    image: '/characters/Rengoku-chibi.png'
+  },
 
   //Giyu
-  { text: 'Feel the rage. The powerful, pure rage of not being able to forgive will become your strength.', author: 'Giyu Tomioka' },
-  { text: 'I am a Hashira. I protect humanity with my blade.', author: 'Giyu Tomioka' },
+  { 
+    id:22,
+    text: 'Feel the rage. The powerful, pure rage of not being able to forgive will become your strength.', 
+    character: 'Giyu Tomioka', 
+    image: '/characters/Giyu-chibi.png'
+  },
+  { id:23,
+    text: 'I am a Hashira. I protect humanity with my blade.', 
+    character: 'Giyu Tomioka',
+    image: '/characters/Giyu-chibi.png' 
+  },
 
   //Shinobu
-  { text: 'Those who do not wield a blade cannot know the pain of the ones who do.', author: 'Shinobu Kocho' },
-  { text: 'Kindness is stronger than steel.', author: 'Shinobu Kocho' },
+  { id:24,
+    text: 'Those who do not wield a blade cannot know the pain of the ones who do.', 
+    character: 'Shinobu Kocho',
+    image: '/characters/Shinobu-chibi.png'
+  },
+  { id:25,
+    text: 'Kindness is stronger than steel.', 
+    character: 'Shinobu Kocho',
+    image: '/characters/Shinobu-chibi.png'
+  },
 
   //Muichiro
-  { text: 'A single decision can change the flow of your life.', author: 'Muichiro Tokito' },
+  { 
+    id:26,
+    text: 'A single decision can change the flow of your life.',
+    character: 'Muichiro Tokito',
+    image: '/characters/Muichiro-chibi.png'
+  },
 
   //Mitsuri
-  { text: 'Love is what gives me strength.', author: 'Mitsuri Kanroji' },
-  { text: 'I fight with love in my heart!', author: 'Mitsuri Kanroji' },
+  { 
+    id:27,
+    text: 'Love is what gives me strength.', 
+    character:'Mitsuri Kanroji',
+    image: '/characters/Mitsuri-chibi.png'},
+  { 
+    id:28,
+    text: 'I fight with love in my heart!', 
+    character: 'Mitsuri Kanroji' ,
+    image: '/characters/Mitsuri-chibi.png'
+  },
 
   //Obanai
-  { text: 'The bonds we protect are stronger than fear.', author: 'Obanai Iguro' },
+  { 
+    id:29,
+    text: 'The bonds we protect are stronger than fear.', 
+    character: 'Obanai Iguro',
+    image: '/characters/Obanai-chibi.png'
+  },
 
 
   //Sanemi
-  { text: 'Fear is something to conquer, not to live by.', author: 'Sanemi Shinazugawa' },
+  { 
+    id:30,
+    text: 'Fear is something to conquer, not to live by.', 
+    character: 'Sanemi Shinazugawa',
+    image: '/characters/Sanemi-chibi.png'
+  },
 
   //Kanao
-  { text: 'Training is the path to growth.', author: 'Kanao Tsuyuri' },
+  { 
+    id:31,
+    text: 'Training is the path to growth.', 
+    character: 'Kanao Tsuyuri',
+    image: '/characters/Kanao-chibi.png'
+  },
 
   //Urokodaki
-  { text: 'You must master a single thing. That is your only hope.', author: 'Sakonji Urokodaki' },
+  { 
+    id:32,
+    text: 'You must master a single thing. That is your only hope.', 
+    character: 'Sakonji Urokodaki',
+    image: '/characters/Urokodaki-chibi.png'
+  },
 
 ];
