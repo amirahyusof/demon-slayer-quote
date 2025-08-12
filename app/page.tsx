@@ -5,6 +5,9 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { quotes, Quote } from '@/lib/quotes';
 import NavigationButton from '@/components/navigationButton';
+import QuoteCard from "@/components/QuoteCard"
+import FavoritesSection from "@/components/FavouritesSection"
+import PlaylistSection from "@/components/PlaylistSection"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,6 +24,9 @@ const patterns = [
 export default function Home() {
   const [randomQuote, setRandomQuote] = useState<Quote | null>(null);
   const quoteRef = useRef<HTMLDivElement>(null);
+  const [view, setView] = useState<"quote" | "favorites" | "playlist">("quote")
+  const [current, setCurrent] = useState<Quote | null>(null)
+  const [favorites, setFavorites] = useState<Quote[]>([])
 
   // Pick a random quote for "Today's Quote"
   useEffect(() => {
@@ -59,6 +65,37 @@ export default function Home() {
     });
   }, []);
 
+  
+
+  useEffect(() => {
+    const stored = localStorage.getItem("demon-favorites")
+    if (stored) {
+      setFavorites(JSON.parse(stored))
+    }
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem("demon-favorites", JSON.stringify(favorites))
+  }, [favorites])
+
+  const getRandomQuote = () => {
+    const available = quotes.filter(q => !favorites.some(f => f.id === q.id))
+    const rand = available[Math.floor(Math.random() * available.length)]
+    setCurrent(rand || null)
+  }
+
+  const addToFavorites = (id: number) => {
+    const favQuote = quotes.find(q => q.id === id)
+    if (favQuote && !favorites.some(f => f.id === id)) {
+      setFavorites([...favorites, favQuote])
+    }
+  }
+
+  useEffect(() => {
+    if (view === "quote") getRandomQuote()
+  }, [view])
+
+  
   return (
     <div className="relative min-h-screen overflow-y-hidden">
       {/* Multi-image background using img elements */}
@@ -83,27 +120,25 @@ export default function Home() {
         Demon Slayer Quotes
         </h1>
         
-        {/* Debug info - Remove this once working */}
-        <div className="bg-white/10 p-4 mb-4 rounded">
-          <p className="text-white text-sm">
-            Multi-image background should now be visible
-          </p>
-        </div>
-
         {/* Hero Section */}
-        <section className="flex flex-col items-center justify-center mt-20">
-          {randomQuote && (
-            <div
-              ref={quoteRef}
-              className="p-6 text-white bg-gradient-to-b from-red-900 via-red-600 to-black rounded-2xl box-shadow-xl max-w-xl"
-            >
-              <p className="text-2xl italic mb-4 opacity-90">"{randomQuote.text}"</p>
-              <span className="text-lg opacity-80">— {randomQuote.author}</span>
-            </div>
-          )}
-          
-          <NavigationButton />
-        </section>
+        <main className="min-h-screen px-6 py-10">
+          <div className="mt-4">
+            {view === "quote" && current && (
+              <QuoteCard quote={current} onFavorite={addToFavorites} />
+            )}
+            {view === "favorites" && <FavoritesSection favorites={favorites} />}
+            {view === "playlist" && <PlaylistSection />}
+          </div>
+
+           <NavigationButton
+            onNewQuote={() => {
+              setView("quote")
+              getRandomQuote()
+            }}
+            onShowFavorites={() => setView("favorites")}
+            onShowPlaylist={() => setView("playlist")}
+          />
+        </main>
       </div>
     </div>
   );
