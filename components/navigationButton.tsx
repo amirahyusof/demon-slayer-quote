@@ -1,7 +1,17 @@
 import { Dices, Heart, Music } from "lucide-react"
 import { Button } from "./ui/button"
 
-export default function NavigationButton(){
+interface NavigationButtonProps {
+  onNewQuote: () => void;
+  onShowFavorites: () => void;
+  onShowPlaylist: () => void;
+}
+
+export default function NavigationButton({
+  onNewQuote,
+  onShowFavorites,
+  onShowPlaylist
+}: NavigationButtonProps){
 
   return(
     <div className="flex flex-col items-center justify-center mt-10 text-red-500">
