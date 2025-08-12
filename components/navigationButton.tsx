@@ -11,28 +11,36 @@ export default function NavigationButton({
   onNewQuote,
   onShowFavorites,
   onShowPlaylist
-}: NavigationButtonProps){
-
-  return(
+}: NavigationButtonProps) {
+  return (
     <div className="flex flex-col items-center justify-center mt-10 text-red-500">
       <div className="flex flex-row gap-4 mb-4">
-        <Button className="border-2 hover:bg-white cursor-pointer">
+        <Button
+          className="border-2 hover:bg-white cursor-pointer flex items-center gap-2"
+          onClick={onNewQuote}
+        >
           <Dices />
           <span className="text-xl">New Quote</span>
         </Button>
-        <Button className="border-2 hover:bg-white cursor-pointer">
+
+        <Button
+          className="border-2 hover:bg-white cursor-pointer flex items-center gap-2"
+          onClick={onShowFavorites}
+        >
           <Heart />
           <span className="text-xl">Favourite</span>
         </Button>
       </div>
 
       <div>
-        <Button className="border-2 hover:bg-white cursor-pointer">
+        <Button
+          className="border-2 hover:bg-white cursor-pointer flex items-center gap-2"
+          onClick={onShowPlaylist}
+        >
           <Music />
           <span className="text-xl">Playlist</span>
         </Button>
       </div>
-      
     </div>
   )
 }
