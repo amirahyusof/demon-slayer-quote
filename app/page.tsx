@@ -115,14 +115,14 @@ export default function Home() {
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
 
-      <div className='relative z-10 p-8 text-center'>
-        <h1 className="text-5xl text-red-400 sm:text-6xl font-bold mb-6 mt-20">
+      <div className='relative z-10 p-4 md:p-6 text-center'>
+        <h1 className="text-5xl text-red-500 sm:text-6xl font-bold my-4">
         Demon Slayer Quotes
         </h1>
         
         {/* Hero Section */}
-        <main className="min-h-screen px-6 py-10">
-          <div className="mt-4">
+        <main className="py-4">
+          <div className="mt-2">
             {view === "quote" && current && (
               <QuoteCard quote={current} onFavorite={addToFavorites} />
             )}
