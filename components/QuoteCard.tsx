@@ -1,4 +1,6 @@
 import { Quote } from "../lib/quotes"
+import Image from 'next/image';
+import { Button } from "./ui/button";
 
 export default function QuoteCard({
   quote,
@@ -8,18 +10,26 @@ export default function QuoteCard({
   onFavorite: (id: number) => void
 }) {
   return (
-    <div className="bg-black text-white border border-red-600 rounded-xl p-6 flex gap-4">
-      <img src={quote.image} alt={quote.character} className="w-24 h-24 object-cover rounded-md" />
-      <div>
-        <p className="text-lg italic font-serif mb-2">{quote.text}</p>
-        <p className="text-right text-sm font-bold">{quote.character}</p>
-        <button
+    
+    <section className="grid md:grid-cols-2 px-2 place-items-center md:place-items-start">
+      <Image 
+      src={quote.image} 
+      alt={quote.character} 
+      width={200}
+      height={200}
+      className="object-cover rounded-md mx-auto md:mx-0" 
+      />
+      
+      <div className="shadow-2xl shadow-red-600 mt-4 p-4 md:-ml-20 w-[90%] md:w-[500px] flex flex-col justify-center items-center text-center backdrop-blur-sm bg-white/30 rounded-lg">
+        <p className="text-2xl italic font-serif mb-2">"{quote.text}"</p>
+        <p className="text-md font-bold">{quote.character}</p>
+        <Button
           onClick={() => onFavorite(quote.id)}
-          className="text-red-400 mt-2 hover:underline"
+          className="text-pink-900 mt-4 shadow-inner hover:bg-pink-200 bg-pink-300"
         >
           Add to Favorite ❤️
-        </button>
+        </Button>
       </div>
-    </div>
+    </section>
   )
 }
