@@ -1,7 +1,14 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-body {
+/* body {
   font-family: 'Noto Serif JP', serif;
-}
+} */
 
+@font-face {
+  font-family: "Bloodcrow";
+  src: url('/fonts/bloodcrow.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
