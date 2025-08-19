@@ -1,3 +1,10 @@
+import { 
+  Tabs, 
+  TabsList, 
+  TabsTrigger, 
+  TabsContent 
+} from "./ui/tabs"
+
 export default function PlaylistSection() {
   const songs = [
     //Season 1
@@ -63,20 +70,151 @@ export default function PlaylistSection() {
 
   return (
     <div className="space-y-6">
-      <h2 className="text-white text-3xl font-bold mb-4">Demon Slayer Songs</h2>
-      {songs.map((song, idx) => (
-        <div key={idx}>
-          <h3 className="text-white mb-2">{song.title}</h3>
-          <div className="aspect-video">
-            <iframe
-              className="w-full h-full"
-              src={song.url}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-        </div>
-      ))}
+      <h1 
+        className="text-4xl text-black sm:text-6xl font-bold"
+        style={{ fontFamily: "Bloodcrow, sans-serif"}}
+      >
+        Demon Slayer Songs
+      </h1>
+
+      <div className="flex w-full flex-col">
+        <Tabs defaultValue="season1">
+          <TabsList className="grid w-fit mx-auto grid-cols-2 md:grid-cols-3 gap-4 mb-32 text-white">
+            <TabsTrigger 
+              value="season1"
+              className="px-4 py-2 rounded-lg bg-red-600/70 hover:bg-red-600/50 transition-colors"
+            >
+              Season 1
+            </TabsTrigger>
+            <TabsTrigger 
+              value="season2"
+              className="px-4 py-2 rounded-lg bg-red-600/70 hover:bg-red-600/50 transition-colors"
+            >
+              Season 2: Mugen Train
+            </TabsTrigger>
+            <TabsTrigger 
+              value="season3"
+              className="px-4 py-2 rounded-lg bg-red-600/70 hover:bg-red-600/50 transition-colors"
+            >
+              Season 3: Entertainment District
+            </TabsTrigger>
+            <TabsTrigger 
+              value="season4"
+              className="px-4 py-2 rounded-lg bg-red-600/70 hover:bg-red-600/50 transition-colors"
+            >
+              Season 4: Swordsmith Village
+            </TabsTrigger>
+            <TabsTrigger 
+              value="season5"
+              className="px-4 py-2 rounded-lg bg-red-600/70 hover:bg-red-600/50 transition-colors"
+            >
+              Season 5: Hashira Training
+            </TabsTrigger>
+            <TabsTrigger 
+              value="movie"
+              className="px-4 py-2 rounded-lg bg-red-600/70 hover:bg-red-600/50 transition-colors"
+            >
+              Movie: Infinity Castle
+            </TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="season1" className="space-y-6 md:space-y-0 justify-center items-center">
+            {songs.slice(0, 2).map((song, idx) => (
+              <div key={idx}>
+                <h3 className="text-white mb-2">{song.title}</h3>
+                <div className="aspect-video">
+              <iframe
+                className="w-full h-full md:w-[80%] md:h-[80%] rounded-lg"
+                src={song.url}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+                </div>
+              </div>
+            ))}
+          </TabsContent>
+
+          <TabsContent value="season2" className="space-y-6">
+            {songs.slice(2, 4).map((song, idx) => (
+              <div key={idx}>
+                <h3 className="text-white mb-2">{song.title}</h3>
+                <div className="aspect-video">
+              <iframe
+                className="w-full h-full rounded-lg"
+                src={song.url}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+                </div>
+              </div>
+            ))}
+          </TabsContent>
+
+          <TabsContent value="season3" className="space-y-6">
+            {songs.slice(4, 6).map((song, idx) => (
+              <div key={idx}>
+                <h3 className="text-white mb-2">{song.title}</h3>
+                <div className="aspect-video">
+              <iframe
+                className="w-full h-full rounded-lg"
+                src={song.url}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+                </div>
+              </div>
+            ))}
+          </TabsContent>
+
+          <TabsContent value="season4" className="space-y-6">
+            {songs.slice(6, 8).map((song, idx) => (
+              <div key={idx}>
+                <h3 className="text-white mb-2">{song.title}</h3>
+                <div className="aspect-video">
+              <iframe
+                className="w-full h-full rounded-lg"
+                src={song.url}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+                </div>
+              </div>
+            ))}
+          </TabsContent>
+
+          <TabsContent value="season5" className="space-y-6">
+            {songs.slice(8, 10).map((song, idx) => (
+              <div key={idx}>
+                <h3 className="text-white mb-2">{song.title}</h3>
+                <div className="aspect-video">
+              <iframe
+                className="w-full h-full rounded-lg"
+                src={song.url}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+                </div>
+              </div>
+            ))}
+          </TabsContent>
+
+          <TabsContent value="movie" className="space-y-6">
+            {songs.slice(10).map((song, idx) => (
+              <div key={idx}>
+                <h3 className="text-white mb-2">{song.title}</h3>
+                <div className="aspect-video">
+              <iframe
+                className="w-full h-full rounded-lg"
+                src={song.url}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+                </div>
+              </div>
+            ))}
+          </TabsContent>
+        </Tabs>
+      </div>
     </div>
   )
 }
