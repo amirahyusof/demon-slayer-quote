@@ -12,6 +12,7 @@
     "@fontsource/noto-serif-jp": "^5.2.6",
     "@gsap/react": "^2.1.2",
     "@radix-ui/react-slot": "^1.2.3",
+    "@radix-ui/react-tabs": "^1.1.13",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.8.1",
     "class-variance-authority": "^0.7.1",
