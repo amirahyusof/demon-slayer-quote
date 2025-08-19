@@ -65,8 +65,6 @@ export default function Home() {
     });
   }, []);
 
-  
-
   useEffect(() => {
     const stored = localStorage.getItem("demon-favorites")
     if (stored) {
@@ -113,13 +111,9 @@ export default function Home() {
       </div>
       
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
 
       <div className='relative z-10 p-4 md:p-6 text-center'>
-        <h1 className="text-5xl text-red-500 sm:text-6xl font-bold my-4">
-        Demon Slayer Quotes
-        </h1>
-        
         {/* Hero Section */}
         <main className="py-4">
           <div className="mt-2">
