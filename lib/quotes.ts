@@ -223,4 +223,73 @@ export const quotes: Quote[] = [
     image: '/characters/Urokodaki-chibi.png'
   },
 
+  { 
+    id:33,
+    text: 'The past makes us who we are today.',
+    character: 'Tanjiro Kamado',
+    image: '/characters/Tanjiro-chibi.png'
+  },
+  { 
+    id:34,
+    text: 'Every breath brings us closer to victory.',
+    character: 'Tanjiro Kamado',
+    image: '/characters/Tanjiro-chibi.png'
+  },
+
+  { 
+    id:35,
+    text: 'Through darkness, we find light.',
+    character: 'Nezuko Kamado',
+    image: '/characters/Nezuko-chibi.png'
+  },
+
+  { 
+    id:36,
+    text: 'True strength comes when you protect others.',
+    character: 'Zenitsu Agatsuma',
+    image: '/characters/Zenitsu-chibi.png'
+  },
+  { 
+    id:37,
+    text: 'Sometimes the bravest thing is to keep going.',
+    character: 'Zenitsu Agatsuma',
+    image: '/characters/Zenitsu-chibi.png'
+  },
+
+  { 
+    id:38,
+    text: 'The wild boar never backs down!',
+    character: 'Inosuke Hashibira',
+    image: '/characters/Inosuke-chibi.png'
+  },
+
+
+  { 
+    id:39,
+    text: 'Your spirit is your greatest weapon.',
+    character: 'Kyojuro Rengoku',
+    image: '/characters/Rengoku-chibi.png'
+  },
+
+  { 
+    id:40,
+    text: 'Silence speaks louder than words.',
+    character: 'Giyu Tomioka',
+    image: '/characters/Giyu-chibi.png'
+  },
+
+  { 
+    id:41,
+    text: 'Each scar tells a story of survival.',
+    character: 'Sanemi Shinazugawa',
+    image: '/characters/Sanemi-chibi.png'
+  },
+  
+  { 
+    id:42,
+    text: 'The path of the sword is endless.',
+    character: 'Sakonji Urokodaki',
+    image: '/characters/Urokodaki-chibi.png'
+  },
+
 ];
