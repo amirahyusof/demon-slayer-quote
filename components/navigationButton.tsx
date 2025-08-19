@@ -13,7 +13,7 @@ export default function NavigationButton({
   onShowPlaylist
 }: NavigationButtonProps) {
   return (
-    <div className="flex flex-col items-center justify-center mt-4 md:mt-10 text-red-500 ">
+    <div className="flex flex-col items-center justify-center mt-6 md:mt-10 text-red-500 ">
       <div className="flex gap-4">
         <Button
           className="border-2 hover:bg-black/80 cursor-pointer flex items-center gap-2 bg-black/50"
