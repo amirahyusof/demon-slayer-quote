@@ -69,17 +69,21 @@ export default function PlaylistSection() {
   ]
 
   return (
-    <div className="space-y-6">
-      <h1 
-        className="text-4xl text-black sm:text-6xl font-bold"
-        style={{ fontFamily: "Bloodcrow, sans-serif"}}
-      >
-        Demon Slayer Songs
-      </h1>
+    <div className="space-y-6 w-full flex flex-col items-center justify-center">
+      <div>
+        <h1 
+          className="text-4xl text-black sm:text-6xl font-bold"
+          style={{ fontFamily: "Bloodcrow, sans-serif"}}
+        >
+          Epic Playlist
+        </h1>
+        <p className="text-xl mt-2">🎵 Listen your Demon Slayer OST here 🎵</p>
+      </div>
+      
 
-      <div className="flex w-full flex-col">
+      <div className="w-full items-center justify-center md:py-4">
         <Tabs defaultValue="season1">
-          <TabsList className="grid w-fit mx-auto grid-cols-2 md:grid-cols-3 gap-4 mb-32 text-white">
+          <TabsList className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-32 md:mb-10 text-white items-center justify-center">
             <TabsTrigger 
               value="season1"
               className="px-4 py-2 rounded-lg bg-red-600/70 hover:bg-red-600/50 transition-colors"
@@ -118,13 +122,13 @@ export default function PlaylistSection() {
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent value="season1" className="space-y-6 md:space-y-0 justify-center items-center">
+          <TabsContent value="season1" className="space-y-6 md:space-y-0 md:grid md:grid-cols-2 md:gap-8">
             {songs.slice(0, 2).map((song, idx) => (
               <div key={idx}>
                 <h3 className="text-white mb-2">{song.title}</h3>
                 <div className="aspect-video">
               <iframe
-                className="w-full h-full md:w-[80%] md:h-[80%] rounded-lg"
+                className="w-full h-full rounded-lg"
                 src={song.url}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
@@ -134,7 +138,7 @@ export default function PlaylistSection() {
             ))}
           </TabsContent>
 
-          <TabsContent value="season2" className="space-y-6">
+          <TabsContent value="season2" className="space-y-6 md:space-y-0 md:grid md:grid-cols-2 md:gap-8">
             {songs.slice(2, 4).map((song, idx) => (
               <div key={idx}>
                 <h3 className="text-white mb-2">{song.title}</h3>
@@ -150,7 +154,7 @@ export default function PlaylistSection() {
             ))}
           </TabsContent>
 
-          <TabsContent value="season3" className="space-y-6">
+          <TabsContent value="season3" className="space-y-6 md:space-y-0 md:grid md:grid-cols-2 md:gap-8">
             {songs.slice(4, 6).map((song, idx) => (
               <div key={idx}>
                 <h3 className="text-white mb-2">{song.title}</h3>
@@ -166,7 +170,7 @@ export default function PlaylistSection() {
             ))}
           </TabsContent>
 
-          <TabsContent value="season4" className="space-y-6">
+          <TabsContent value="season4" className="space-y-6 md:space-y-0 md:grid md:grid-cols-2 md:gap-8">
             {songs.slice(6, 8).map((song, idx) => (
               <div key={idx}>
                 <h3 className="text-white mb-2">{song.title}</h3>
@@ -182,7 +186,7 @@ export default function PlaylistSection() {
             ))}
           </TabsContent>
 
-          <TabsContent value="season5" className="space-y-6">
+          <TabsContent value="season5" className="space-y-6 md:space-y-0 md:grid md:grid-cols-2 md:gap-8">
             {songs.slice(8, 10).map((song, idx) => (
               <div key={idx}>
                 <h3 className="text-white mb-2">{song.title}</h3>
@@ -198,7 +202,7 @@ export default function PlaylistSection() {
             ))}
           </TabsContent>
 
-          <TabsContent value="movie" className="space-y-6">
+          <TabsContent value="movie" className="space-y-6 md:space-y-0 md:grid md:grid-cols-2 md:gap-8">
             {songs.slice(10).map((song, idx) => (
               <div key={idx}>
                 <h3 className="text-white mb-2">{song.title}</h3>
