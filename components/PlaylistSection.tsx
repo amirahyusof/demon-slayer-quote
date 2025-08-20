@@ -83,7 +83,7 @@ export default function PlaylistSection() {
 
       <div className="w-full items-center justify-center md:py-4">
         <Tabs defaultValue="season1">
-          <TabsList className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-32 md:mb-10 text-white items-center justify-center">
+          <TabsList className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-32 md:mb-28 lg:mb-10 text-white items-center justify-center">
             <TabsTrigger 
               value="season1"
               className="px-4 py-2 rounded-lg bg-red-600/70 hover:bg-red-600/50 transition-colors"
