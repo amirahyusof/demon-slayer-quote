@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect } from "react";
+import { gsap } from "gsap";
 import { Dices, Heart, Music } from "lucide-react"
 import { Button } from "./ui/button"
 
@@ -12,12 +16,30 @@ export default function NavigationButton({
   onShowFavorites,
   onShowPlaylist
 }: NavigationButtonProps) {
+
+  const animatePageTransition = (callback: () => void) => {
+    gsap.to(".page-content", {
+      opacity:0,
+      y: 50, 
+      duration: 0.4, 
+      ease: "power2.inOut",
+      onComplete: () => {
+        callback();
+        gsap.fromTo(
+          ".page-content",
+          {opacity:0, y:-50},
+          {opacity:1, y:0, duration: 0.4, ease:"power2.out"}
+        );
+      },
+    });
+};
+
   return (
     <div className="flex flex-col items-center justify-center mt-6 md:mt-10 text-red-500 ">
       <div className="flex gap-4">
         <Button
           className="border-2 hover:bg-black/80 cursor-pointer flex items-center gap-2 bg-black/50"
-          onClick={onNewQuote}
+          onClick={() => animatePageTransition(onNewQuote)}
         >
           <Dices />
           <span className="text-md">New Quote</span>
@@ -25,7 +47,7 @@ export default function NavigationButton({
 
         <Button
           className="border-2 hover:bg-black/80 cursor-pointer flex items-center gap-2 bg-black/50"
-          onClick={onShowFavorites}
+          onClick={() => animatePageTransition(onShowFavorites)}
         >
           <Heart />
           <span className="text-md">Favourite</span>
@@ -33,7 +55,7 @@ export default function NavigationButton({
 
         <Button
           className="border-2 hover:bg-black/80 cursor-pointer flex items-center gap-2 bg-black/50"
-          onClick={onShowPlaylist}
+          onClick={() => animatePageTransition(onShowPlaylist)}
         >
           <Music />
           <span className="text-md">Playlist</span>
