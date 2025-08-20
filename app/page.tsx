@@ -21,17 +21,19 @@ const patterns = [
   '/background/pattern(7).jpg',
 ];
 
-export default function Home() {
-  const [randomQuote, setRandomQuote] = useState<Quote | null>(null);
-  const quoteRef = useRef<HTMLDivElement>(null);
-  const [view, setView] = useState<"quote" | "favorites" | "playlist">("quote")
-  const [current, setCurrent] = useState<Quote | null>(null)
-  const [favorites, setFavorites] = useState<Quote[]>([])
+type Page = "quote" | "favourites" | "playlist";
 
-  // Pick a random quote for "Today's Quote"
-  useEffect(() => {
-    setRandomQuote(quotes[Math.floor(Math.random() * quotes.length)]);
-  }, []);
+export default function Home() {
+  const quoteRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [page, setPage] = useState<Page>("quote")
+  
+  
+  const [current, setCurrent] = useState<Quote>(() =>
+  quotes[Math.floor(Math.random() * quotes.length)]
+  );
+  const [favorites, setFavorites] = useState<Quote[]>([])
+  
 
   // GSAP animations
   useEffect(() => {
@@ -54,6 +56,16 @@ export default function Home() {
       });
     });
   }, []);
+
+  // Animate on page switch
+  useEffect(() => {
+    if(containerRef.current){
+      gsap.fromTo(containerRef.current.children,
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }
+      )
+    }
+  }, [page])
 
   // Debug: Check if images load
   useEffect(() => {
@@ -89,11 +101,6 @@ export default function Home() {
     }
   }
 
-  useEffect(() => {
-    if (view === "quote") getRandomQuote()
-  }, [view])
-
-  
   return (
     <div className="relative min-h-screen overflow-y-hidden">
       {/* Multi-image background using img elements */}
@@ -115,22 +122,25 @@ export default function Home() {
 
       <div className='relative z-10 p-4 md:p-6 text-center'>
         {/* Hero Section */}
-        <main className="py-4">
-          <div className="mt-2">
-            {view === "quote" && current && (
-              <QuoteCard quote={current} onFavorite={addToFavorites} />
+        <main className="py-4" ref={containerRef} >
+          <div className="mt-2 w-full">
+            {page === "quote" && (
+              <QuoteCard 
+                quote={current} 
+                onFavorite={addToFavorites} 
+              />
             )}
-            {view === "favorites" && <FavoritesSection favorites={favorites} />}
-            {view === "playlist" && <PlaylistSection />}
+            {page === "favourites" && <FavoritesSection favorites={favorites} />}
+            {page === "playlist" && <PlaylistSection />}
           </div>
 
            <NavigationButton
             onNewQuote={() => {
-              setView("quote")
+              setPage("quote")
               getRandomQuote()
             }}
-            onShowFavorites={() => setView("favorites")}
-            onShowPlaylist={() => setView("playlist")}
+            onShowFavorites={() => setPage("favourites")}
+            onShowPlaylist={() => setPage("playlist")}
           />
         </main>
       </div>
