@@ -118,7 +118,7 @@ export default function Home() {
       </div>
       
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-black/30"></div>
 
       <div className='relative z-10 p-4 md:p-6 text-center'>
         {/* Hero Section */}

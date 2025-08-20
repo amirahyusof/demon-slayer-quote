@@ -12,7 +12,7 @@ export default function QuoteCard({
   return (
     <div>
       <h1 
-        className="text-5xl text-black sm:text-6xl font-bold"
+        className="text-6xl text-black md:text-7xl font-bold"
         style={{ fontFamily: "Bloodcrow, sans-serif"}}
       >
         Demon Slayer 
@@ -28,7 +28,7 @@ export default function QuoteCard({
         className="object-cover rounded-md mx-auto md:mx-0" 
         />
         
-        <div className="shadow-2xl shadow-red-600 mt-4 p-4 md:-ml-32 w-[90%] md:w-[500px] flex flex-col justify-center items-center text-center backdrop-blur-sm bg-white/30 rounded-lg">
+        <div className="shadow-lg shadow-black mt-4 md:mt-20 p-4 md:-ml-32 w-[90%] md:w-[500px] flex flex-col justify-center items-center text-center backdrop-blur-sm bg-white/30 rounded-lg">
           <p className="text-2xl italic font-serif mb-2">"{quote.text}"</p>
           <p className="text-md font-bold">{quote.character}</p>
           <Button
