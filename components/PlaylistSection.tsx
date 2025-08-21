@@ -72,7 +72,7 @@ export default function PlaylistSection() {
     <div className="space-y-6 w-full flex flex-col items-center justify-center">
       <div>
         <h1 
-          className="text-4xl text-black sm:text-6xl font-bold"
+          className="text-5xl text-black sm:text-6xl font-bold"
           style={{ fontFamily: "Bloodcrow, sans-serif"}}
         >
           Epic Playlist
