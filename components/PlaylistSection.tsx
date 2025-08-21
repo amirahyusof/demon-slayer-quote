@@ -72,12 +72,12 @@ export default function PlaylistSection() {
     <div className="space-y-6 w-full flex flex-col items-center justify-center">
       <div>
         <h1 
-          className="text-5xl text-black sm:text-6xl font-bold"
+          className="text-4xl text-black sm:text-6xl font-bold"
           style={{ fontFamily: "Bloodcrow, sans-serif"}}
         >
           Epic Playlist
         </h1>
-        <p className="text-xl mt-2">🎵 Listen your Demon Slayer OST here 🎵</p>
+        <p className="text-lg md:text-xl mt-2">🎵 Listen your Demon Slayer OST here 🎵</p>
       </div>
       
 
@@ -86,37 +86,37 @@ export default function PlaylistSection() {
           <TabsList className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-32 md:mb-28 lg:mb-10 text-white items-center justify-center">
             <TabsTrigger 
               value="season1"
-              className="px-4 py-2 rounded-lg bg-red-600/70 hover:bg-red-600/50 transition-colors"
+              className="px-4 py-2 md:text-lg rounded-lg bg-red-600/70 hover:bg-red-600/50 transition-colors"
             >
-              Season 1
+              Demon Slayer
             </TabsTrigger>
             <TabsTrigger 
               value="season2"
-              className="px-4 py-2 rounded-lg bg-red-600/70 hover:bg-red-600/50 transition-colors"
+              className="px-4 py-2 md:text-lg rounded-lg bg-red-600/70 hover:bg-red-600/50 transition-colors"
             >
-              Season 2: Mugen Train
+              Mugen Train
             </TabsTrigger>
             <TabsTrigger 
               value="season3"
-              className="px-4 py-2 rounded-lg bg-red-600/70 hover:bg-red-600/50 transition-colors"
+              className="px-4 py-2 md:text-lg rounded-lg bg-red-600/70 hover:bg-red-600/50 transition-colors"
             >
-              Season 3: Entertainment District
+              Entertainment District
             </TabsTrigger>
             <TabsTrigger 
               value="season4"
-              className="px-4 py-2 rounded-lg bg-red-600/70 hover:bg-red-600/50 transition-colors"
+              className="px-4 py-2 md:text-lg rounded-lg bg-red-600/70 hover:bg-red-600/50 transition-colors"
             >
-              Season 4: Swordsmith Village
+              Swordsmith Village
             </TabsTrigger>
             <TabsTrigger 
               value="season5"
-              className="px-4 py-2 rounded-lg bg-red-600/70 hover:bg-red-600/50 transition-colors"
+              className="px-4 py-2 md:text-lg rounded-lg bg-red-600/70 hover:bg-red-600/50 transition-colors"
             >
-              Season 5: Hashira Training
+              Hashira Training
             </TabsTrigger>
             <TabsTrigger 
               value="movie"
-              className="px-4 py-2 rounded-lg bg-red-600/70 hover:bg-red-600/50 transition-colors"
+              className="px-4 py-2 md:text-lg rounded-lg bg-red-600/70 hover:bg-red-600/50 transition-colors"
             >
               Movie: Infinity Castle
             </TabsTrigger>

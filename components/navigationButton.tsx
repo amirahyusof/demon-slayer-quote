@@ -34,10 +34,10 @@ export default function NavigationButton({
 };
 
   return (
-    <div className="flex flex-col items-center justify-center mt-6 md:mt-10 text-red-500 ">
-      <div className="flex gap-4">
+    <div className="flex md:flex-row items-center justify-center mt-6 md:mt-10  text-red-500 ">
+      <div className="flex flex-wrap justify-center gap-2 md:gap-6">
         <Button
-          className="border-2 hover:bg-black/80 cursor-pointer flex items-center gap-2 bg-black/50"
+          className="border-2 hover:bg-black/80 cursor-pointer flex items-center bg-black/50"
           onClick={() => animatePageTransition(onNewQuote)}
         >
           <Dices />
@@ -45,7 +45,7 @@ export default function NavigationButton({
         </Button>
 
         <Button
-          className="border-2 hover:bg-black/80 cursor-pointer flex items-center gap-2 bg-black/50"
+          className="border-2 hover:bg-black/80 cursor-pointer flex items-center bg-black/50"
           onClick={() => animatePageTransition(onShowFavorites)}
         >
           <Heart />
@@ -53,7 +53,7 @@ export default function NavigationButton({
         </Button>
 
         <Button
-          className="border-2 hover:bg-black/80 cursor-pointer flex items-center gap-2 bg-black/50"
+          className="border-2 hover:bg-black/80 cursor-pointer flex items-center bg-black/50"
           onClick={() => animatePageTransition(onShowPlaylist)}
         >
           <Music />

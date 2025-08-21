@@ -17,7 +17,7 @@ export default function QuoteCard({
       >
         Demon Slayer 
       </h1>
-      <p className="text-4xl text-black font-bold mb-8">Quotes</p>
+      <p className="text-3xl md:text-4xl text-black font-bold mb-8">Quotes</p>
       
       <section className="grid md:grid-cols-2 px-2 md:px-16 lg:px-80 place-items-center md:place-items-start ">
         <Image 

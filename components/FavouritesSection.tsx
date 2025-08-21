@@ -5,7 +5,7 @@ export default function FavoritesSection({ favorites }: { favorites: Quote[] }) 
   return (
     <div>
       <h1 
-        className="text-5xl text-black sm:text-6xl font-bold"
+        className="text-4xl text-black sm:text-6xl font-bold"
         style={{ fontFamily: "Bloodcrow, sans-serif"}}
       >
         Favourite Quotes
