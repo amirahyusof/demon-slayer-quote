@@ -8,6 +8,7 @@ import NavigationButton from '@/components/navigationButton';
 import QuoteCard from "@/components/QuoteCard"
 import FavoritesSection from "@/components/FavouritesSection"
 import PlaylistSection from "@/components/PlaylistSection"
+import Image from 'next/image';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -68,14 +69,14 @@ export default function Home() {
   }, [page])
 
   // Debug: Check if images load
-  useEffect(() => {
-    patterns.forEach((pattern, index) => {
-      const img = new Image();
-      img.onload = () => console.log(`✅ Image ${index + 1} loaded: ${pattern}`);
-      img.onerror = () => console.error(`❌ Image ${index + 1} failed: ${pattern}`);
-      img.src = pattern;
-    });
-  }, []);
+  // useEffect(() => {
+  //   patterns.forEach((pattern, index) => {
+  //     const img = new Image();
+  //     img.onload = () => console.log(`✅ Image ${index + 1} loaded: ${pattern}`);
+  //     img.onerror = () => console.error(`❌ Image ${index + 1} failed: ${pattern}`);
+  //     img.src = pattern;
+  //   });
+  // }, []);
 
   useEffect(() => {
     const stored = localStorage.getItem("demon-favorites")
@@ -107,9 +108,9 @@ export default function Home() {
       <div className="absolute inset-0 flex">
         {patterns.map((image, index) => (
           <div key={index} className="flex-1 h-full relative overflow-hidden">
-            <img
+            <Image
               src={image}
-              alt=""
+              alt="Pattern Background"
               className="w-full h-full object-cover opacity-40"
               style={{ minHeight: '100vh' }}
             />

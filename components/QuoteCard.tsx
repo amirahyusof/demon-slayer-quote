@@ -29,7 +29,7 @@ export default function QuoteCard({
         />
         
         <div className="shadow-lg shadow-black mt-4 md:mt-20 p-4 md:-ml-32 w-[90%] md:w-[500px] flex flex-col justify-center items-center text-center backdrop-blur-sm bg-white/30 rounded-lg">
-          <p className="text-2xl italic font-serif mb-2">"{quote.text}"</p>
+          <p className="text-2xl italic font-serif mb-2">&quot;{quote.text}&quot;</p>
           <p className="text-md font-bold">{quote.character}</p>
           <Button
             onClick={() => onFavorite(quote.id)}

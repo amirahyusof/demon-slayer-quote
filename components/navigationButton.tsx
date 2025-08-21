@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
 import { gsap } from "gsap";
 import { Dices, Heart, Music } from "lucide-react"
 import { Button } from "./ui/button"

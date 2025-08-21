@@ -16,7 +16,7 @@ export default function FavoritesSection({ favorites }: { favorites: Quote[] }) 
         ) : (
           favorites.map(q => (
             <Card key={q.id} className="shadow-2xl shadow-red-600 border-red-600 mt-2 p-2 md:-ml-20 w-[90%] md:w-[500px] backdrop-blur-sm bg-white/30 rounded-lg">
-              <p className="text-xl italic font-serif">"{q.text}"</p>
+              <p className="text-xl italic font-serif">&quot;{q.text}&quot;</p>
               <p className="text-md -mt-4">{q.character}</p>
             </Card>
           ))
