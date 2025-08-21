@@ -19,7 +19,7 @@ export default function QuoteCard({
       </h1>
       <p className="text-4xl text-black font-bold mb-8">Quotes</p>
       
-      <section className="grid md:grid-cols-2 px-2 md:px-16 place-items-center md:place-items-start ">
+      <section className="grid md:grid-cols-2 px-2 md:px-16 lg:px-80 place-items-center md:place-items-start ">
         <Image 
         src={quote.image} 
         alt={quote.character} 
@@ -28,7 +28,7 @@ export default function QuoteCard({
         className="object-cover rounded-md mx-auto md:mx-0" 
         />
         
-        <div className="shadow-lg shadow-black mt-4 md:mt-20 p-4 md:-ml-32 w-[90%] md:w-[500px] flex flex-col justify-center items-center text-center backdrop-blur-sm bg-white/30 rounded-lg">
+        <div className="shadow-lg shadow-black mt-4 md:mt-20 lg:mt-16 p-4 md:-ml-32 w-[90%] md:w-[500px] flex flex-col justify-center items-center text-center backdrop-blur-sm bg-white/30 rounded-lg">
           <p className="text-2xl italic font-serif mb-2">&quot;{quote.text}&quot;</p>
           <p className="text-md font-bold">{quote.character}</p>
           <Button
