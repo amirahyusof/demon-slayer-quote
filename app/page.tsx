@@ -110,6 +110,7 @@ export default function Home() {
           <div key={index} className="flex-1 h-full relative overflow-hidden">
             <Image
               src={image}
+              fill
               alt="Pattern Background"
               className="w-full h-full object-cover opacity-40"
               style={{ minHeight: '100vh' }}
