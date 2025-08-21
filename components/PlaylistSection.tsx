@@ -20,11 +20,11 @@ export default function PlaylistSection() {
     //Season 2
     {
       title: "Akeboshi - LiSA (OP - Mugen Train Arc)",
-      url: "https://www.youtube.com/embed/4DxL6IKmXx4",
+      url: "https://www.youtube.com/embed/yGcm81aaTHg?si=PyxlH2f9a2xDmYXz",
     },
     {
       title: "Shirogane - LiSA (ED - Mugen Train Arc)",
-      url: "https://www.youtube.com/embed/4DxL6IKmXx4",
+      url: "https://www.youtube.com/embed/5whFTc6SaI8?si=ohgmwKUhkZFPl89B",
     },
 
     //Season 3
